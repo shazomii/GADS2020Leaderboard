@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.main.MainActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#000000"
+        android:theme="@style/AppTheme.NoActionBar">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:minHeight="?actionBarSize"
+                android:padding="@dimen/appbar_padding"
+                android:text="@string/leaderboard"
+                android:textAppearance="@style/TextAppearance.Widget.AppCompat.Toolbar.Title"
+                android:textColor="#FFFFFF"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Button
+                android:id="@+id/submitButton"
+                android:layout_width="90dp"
+                android:layout_height="25dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:backgroundTint="#FFFFFF"
+                android:text="Submit"
+                android:textAllCaps="false"
+                android:background="@drawable/button_background"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tabs"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:tabContentStart="@dimen/appbar_padding"
+            app:tabGravity="fill"
+            app:tabIndicatorColor="#FFFFFF"
+            app:tabIndicatorHeight="4dp"
+            app:tabMode="fixed"
+            app:tabTextAppearance="@style/TextAppearance.AppCompat.Body2"
+            app:tabTextColor="#FFFFFF" />
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/view_pager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

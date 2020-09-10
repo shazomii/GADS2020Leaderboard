@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.main.FragmentSkills">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.davenet.gadsleaderboard.viewmodels.SkillsViewModel" />
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <ProgressBar
+            android:id="@+id/loading_skill_spinner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:isNetworkError = "@{safeUnbox(viewModel.eventNetworkError)}"
+            app:learnerlist = "@{viewModel.learnersList}"
+            android:layout_gravity="center" />
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/learner_skills_recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:listitem="@layout/learner_skills_item" />
+    </FrameLayout>
+</layout>
