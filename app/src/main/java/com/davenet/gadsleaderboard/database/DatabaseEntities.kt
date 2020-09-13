@@ -1,7 +1,6 @@
 package com.davenet.gadsleaderboard.database
 
 import androidx.room.Entity
-import androidx.room.PrimaryKey
 import com.davenet.gadsleaderboard.domain.LeaderHour
 import com.davenet.gadsleaderboard.domain.LeaderSkill
 
@@ -13,22 +12,20 @@ import com.davenet.gadsleaderboard.domain.LeaderSkill
 /**
  * DatabaseHour represents a Learning Leader(hours spent learning) entity in the database.
  */
-@Entity
+@Entity(primaryKeys = ["name", "hours", "country"])
 data class DatabaseHour constructor(
     val name: String,
-    @PrimaryKey
-    val hours: String,
+    val hours: Int,
     val country: String,
     val badgeUrl: String)
 
 /**
  * DatabaseSkills represents a Learning Leader(skill IQ score) entity in the database
  */
-@Entity
+@Entity(primaryKeys = ["name", "score", "country"])
 data class DatabaseSkill constructor(
     val name: String,
-    @PrimaryKey
-    val score: String,
+    val score: Int,
     val country: String,
     val badgeUrl: String)
 
@@ -36,6 +33,7 @@ data class DatabaseSkill constructor(
  * Map DatabaseHours to domain entities
  */
 
+@JvmName("asDomainModelDatabaseHour")
 fun List<DatabaseHour>.asDomainModel(): List<LeaderHour> {
     return map {
         LeaderHour(
@@ -47,8 +45,8 @@ fun List<DatabaseHour>.asDomainModel(): List<LeaderHour> {
     }
 }
 
-
-fun List<DatabaseSkill>.asDomModel(): List<LeaderSkill> {
+@JvmName("asDomainModelDatabaseSkill")
+fun List<DatabaseSkill>.asDomainModel(): List<LeaderSkill> {
     return map {
         LeaderSkill(
             name = it.name,

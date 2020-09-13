@@ -16,18 +16,19 @@ import com.squareup.moshi.JsonClass
 @JsonClass(generateAdapter = true)
 data class NetworkHour(
     val name: String,
-    val hours: String,
+    val hours: Int,
     val country: String,
     val badgeUrl: String)
 
 @JsonClass(generateAdapter = true)
 data class NetworkSkill(
     val name: String,
-    val score: String,
+    val score: Int,
     val country: String,
     val badgeUrl: String
 )
 
+@JvmName("asDatabaseModelNetworkHour")
 fun List<NetworkHour>.asDatabaseModel(): List<DatabaseHour> {
     return map {
         DatabaseHour(
@@ -38,7 +39,8 @@ fun List<NetworkHour>.asDatabaseModel(): List<DatabaseHour> {
     }
 }
 
-fun List<NetworkSkill>.asDataModel(): List<DatabaseSkill> {
+@JvmName("asDatabaseModelNetworkSkill")
+fun List<NetworkSkill>.asDatabaseModel(): List<DatabaseSkill> {
     return map {
         DatabaseSkill(
             name = it.name,

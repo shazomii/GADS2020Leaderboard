@@ -10,14 +10,14 @@ package com.davenet.gadsleaderboard.domain
 
 data class LeaderHour(
     val name: String,
-    val hours: String,
+    val hours: Int,
     val country: String,
     val badgeUrl: String
 )
 
 data class LeaderSkill(
     val name: String,
-    val score: String,
+    val score: Int,
     val country: String,
     val badgeUrl: String
 )

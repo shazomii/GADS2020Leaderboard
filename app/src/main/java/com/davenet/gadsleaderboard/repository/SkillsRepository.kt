@@ -3,16 +3,16 @@ package com.davenet.gadsleaderboard.repository
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.Transformations
 import com.davenet.gadsleaderboard.database.LeaderboardDatabase
-import com.davenet.gadsleaderboard.database.asDomModel
+import com.davenet.gadsleaderboard.database.asDomainModel
 import com.davenet.gadsleaderboard.domain.LeaderSkill
 import com.davenet.gadsleaderboard.network.LeaderNetwork
-import com.davenet.gadsleaderboard.network.asDataModel
+import com.davenet.gadsleaderboard.network.asDatabaseModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 
 class SkillsRepository(private val database: LeaderboardDatabase) {
     val skills: LiveData<List<LeaderSkill>> = Transformations.map(database.skillDao.getSkills()) {
-        it.asDomModel()
+        it.asDomainModel()
     }
 
     /**
@@ -25,7 +25,7 @@ class SkillsRepository(private val database: LeaderboardDatabase) {
     suspend fun refreshSkills() {
         withContext(Dispatchers.IO) {
             val leaderSkills = LeaderNetwork.gads.getLeaderSkills().await()
-            database.skillDao.insertAll(leaderSkills.asDataModel())
+            database.skillDao.insertAll(leaderSkills.asDatabaseModel())
         }
     }
 }
