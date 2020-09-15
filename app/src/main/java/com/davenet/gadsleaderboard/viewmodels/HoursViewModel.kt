@@ -9,7 +9,6 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.SupervisorJob
 import kotlinx.coroutines.launch
 import java.io.IOException
-import java.lang.IllegalArgumentException
 
 /**
  * HoursViewModel designed to store and manage UI-related data in a lifecycle conscious way. This
@@ -53,7 +52,7 @@ class HoursViewModel(application: Application) : AndroidViewModel(application) {
      * Event triggered for network error. This is private to avoid exposing a
      * way to set this value to observers.
      */
-    private var _eventNetworkError = MutableLiveData<Boolean>(false)
+    private var _eventNetworkError = MutableLiveData(false)
 
     /**
      * Event triggered for network error. Views should use this to get access
@@ -66,7 +65,7 @@ class HoursViewModel(application: Application) : AndroidViewModel(application) {
      * Flag to display the error message. This is private to avoid exposing a
      * way to set this value to observers.
      */
-    private var _isNetworkErrorShown = MutableLiveData<Boolean>(false)
+    private var _isNetworkErrorShown = MutableLiveData(false)
 
     /**
      * Flag to display the error message. Views should use this to get access

@@ -1,6 +1,7 @@
 package com.davenet.gadsleaderboard.database
 
 import androidx.room.Entity
+import androidx.room.PrimaryKey
 import com.davenet.gadsleaderboard.domain.LeaderHour
 import com.davenet.gadsleaderboard.domain.LeaderSkill
 
@@ -12,8 +13,10 @@ import com.davenet.gadsleaderboard.domain.LeaderSkill
 /**
  * DatabaseHour represents a Learning Leader(hours spent learning) entity in the database.
  */
-@Entity(primaryKeys = ["name", "hours", "country"])
+@Entity
 data class DatabaseHour constructor(
+    @PrimaryKey
+    val id: Int,
     val name: String,
     val hours: Int,
     val country: String,
@@ -22,12 +25,15 @@ data class DatabaseHour constructor(
 /**
  * DatabaseSkills represents a Learning Leader(skill IQ score) entity in the database
  */
-@Entity(primaryKeys = ["name", "score", "country"])
+@Entity
 data class DatabaseSkill constructor(
+    @PrimaryKey
+    val id: Int,
     val name: String,
     val score: Int,
     val country: String,
-    val badgeUrl: String)
+    val badgeUrl: String
+    )
 
 /**
  * Map DatabaseHours to domain entities
