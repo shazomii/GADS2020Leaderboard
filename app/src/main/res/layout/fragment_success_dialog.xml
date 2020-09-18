@@ -15,7 +15,7 @@
         android:layout_margin="16dp"
         app:layout_constraintTop_toTopOf="parent"
         android:src="@drawable/ic_check"
-        android:contentDescription="Project submission success"
+        android:contentDescription="@string/project_submission_success"
         app:tint="@color/success" />
     <TextView
         android:layout_width="wrap_content"
@@ -23,7 +23,7 @@
         app:layout_constraintStart_toStartOf="@id/successIcon"
         app:layout_constraintEnd_toEndOf="@id/successIcon"
         app:layout_constraintTop_toBottomOf="@id/successIcon"
-        android:text="Submission Successful"
+        android:text="@string/submission_successful"
         android:textSize="18sp"
         android:textStyle="bold"
         />

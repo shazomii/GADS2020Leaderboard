@@ -3,9 +3,24 @@
     <string name="tab_text_1">Learning Leaders</string>
     <string name="tab_text_2">Skill IQ Leaders</string>
     <string name="leaderboard">LEADERBOARD</string>
-    <string name="submit">Submit</string>
     <string name="first_name_error">First name is required!</string>
     <string name="last_name_error">Last name is required!</string>
     <string name="email_error">Enter a valid email address!</string>
     <string name="link_error">Project link is required!</string>
+    <string name="learning_hours_badge">Learning hours badge</string>
+    <string name="skill_iq_score_badge">Skill IQ score badge</string>
+    <string name="submit">Submit</string>
+    <string name="gads_image">GADS Image</string>
+    <string name="project_submission">Project Submission</string>
+    <string name="first_name">First Name</string>
+    <string name="last_name">Last Name</string>
+    <string name="email_address">Email address</string>
+    <string name="github_link">Github Link</string>
+    <string name="cancel_icon">cancel icon</string>
+    <string name="are_you_sure">Are you sure?</string>
+    <string name="yes">Yes</string>
+    <string name="error_submitting_project">Error submitting project</string>
+    <string name="submission_not_successful">Submission not Successful</string>
+    <string name="project_submission_success">Project submission success</string>
+    <string name="submission_successful">Submission Successful</string>
 </resources>

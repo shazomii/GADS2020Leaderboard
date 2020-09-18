@@ -15,7 +15,7 @@
         app:layout_constraintTop_toTopOf="parent"
         android:src="@drawable/ic_warning"
         android:layout_margin="16dp"
-        android:contentDescription="Error submitting project"
+        android:contentDescription="@string/error_submitting_project"
         app:tint="@color/error" />
     <TextView
         android:layout_width="wrap_content"
@@ -23,7 +23,7 @@
         app:layout_constraintStart_toStartOf="@id/errorIcon"
         app:layout_constraintEnd_toEndOf="@id/errorIcon"
         app:layout_constraintTop_toBottomOf="@id/errorIcon"
-        android:text="Submission not Successful"
+        android:text="@string/submission_not_successful"
         android:textStyle="bold"
         android:textSize="18sp"
         />

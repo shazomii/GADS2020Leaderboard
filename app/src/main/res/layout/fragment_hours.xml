@@ -19,9 +19,6 @@
             android:layout_height="wrap_content"
             app:isNetworkError = "@{safeUnbox(viewModel.eventNetworkError)}"
             app:learnerlist = "@{viewModel.learnersList}"
-
-
-
             android:layout_gravity="center" />
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/learner_hours_recycler_view"

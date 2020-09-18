@@ -43,7 +43,8 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                android:contentDescription="@string/gads_image" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </com.google.android.material.appbar.AppBarLayout>
 
@@ -65,7 +66,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="24dp"
-                android:text="Project Submission"
+                android:text="@string/project_submission"
                 android:textColor="@color/colorAccent"
                 android:textSize="24sp"
                 android:textStyle="bold"
@@ -93,7 +94,7 @@
                 android:layout_marginEnd="8dp"
                 android:autofillHints="false"
                 android:background="@color/textColor"
-                android:hint="First Name"
+                android:hint="@string/first_name"
                 android:inputType="text|textCapWords"
                 android:padding="8dp"
                 android:textSize="18sp"
@@ -110,7 +111,7 @@
                 android:layout_marginEnd="24dp"
                 android:autofillHints="false"
                 android:background="@color/textColor"
-                android:hint="Last Name"
+                android:hint="@string/last_name"
                 android:inputType="text|textCapWords"
                 android:padding="8dp"
                 android:textSize="18sp"
@@ -130,7 +131,7 @@
                 android:layout_marginEnd="24dp"
                 android:autofillHints="false"
                 android:background="@color/textColor"
-                android:hint="Email address"
+                android:hint="@string/email_address"
                 android:inputType="textEmailAddress"
                 android:padding="8dp"
                 android:textSize="18sp"
@@ -148,7 +149,7 @@
                 android:layout_marginEnd="24dp"
                 android:autofillHints="false"
                 android:background="@color/textColor"
-                android:hint="Github Link"
+                android:hint="@string/github_link"
                 android:inputType="text"
                 android:padding="8dp"
                 android:textSize="18sp"

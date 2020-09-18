@@ -1,24 +1,20 @@
 package com.davenet.gadsleaderboard.ui.main
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.annotation.LayoutRes
 import androidx.databinding.DataBindingUtil
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.davenet.gadsleaderboard.R
-import com.davenet.gadsleaderboard.databinding.FragmentHoursBinding
 import com.davenet.gadsleaderboard.databinding.FragmentSkillsBinding
-import com.davenet.gadsleaderboard.databinding.LearnerHoursItemBinding
 import com.davenet.gadsleaderboard.databinding.LearnerSkillsItemBinding
-import com.davenet.gadsleaderboard.domain.LeaderHour
 import com.davenet.gadsleaderboard.domain.LeaderSkill
-import com.davenet.gadsleaderboard.viewmodels.HoursViewModel
 import com.davenet.gadsleaderboard.viewmodels.SkillsViewModel
 
 class FragmentSkills : Fragment() {
