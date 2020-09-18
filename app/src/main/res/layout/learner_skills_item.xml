@@ -22,7 +22,7 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="match_parent">
 
             <ImageView
                 android:id="@+id/skills_badge"
@@ -33,13 +33,14 @@
                 android:layout_marginBottom="8dp"
                 android:adjustViewBounds="false"
                 android:cropToPadding="false"
-                android:scaleType="centerCrop"
+                android:scaleType="fitCenter"
                 app:imageUrl="@{skill.badgeUrl}"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintDimensionRatio="w,16:9"
+                app:layout_constraintDimensionRatio="2"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                tools:srcCompat="@tools:sample/backgrounds/scenic" />
+                tools:srcCompat="@tools:sample/backgrounds/scenic"
+                android:contentDescription="@string/skill_iq_score_badge" />
 
             <TextView
                 android:id="@+id/learner_name"
@@ -53,7 +54,7 @@
                 android:textAppearance="@style/TextAppearance.AppCompat.Body2"
                 app:layout_constraintStart_toEndOf="@id/skills_badge"
                 app:layout_constraintTop_toTopOf="parent"
-                tools:text="Perry Oluwatobi"/>
+                tools:text="Perry Oluwatobi" />
 
             <TextView
                 android:id="@+id/learner_skill"

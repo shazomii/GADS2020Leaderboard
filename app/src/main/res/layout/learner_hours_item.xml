@@ -32,13 +32,14 @@
                 android:layout_marginBottom="8dp"
                 android:adjustViewBounds="false"
                 android:cropToPadding="false"
-                android:scaleType="centerCrop"
+                android:scaleType="fitCenter"
                 app:imageUrl="@{hour.badgeUrl}"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintDimensionRatio="1"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                tools:srcCompat="@tools:sample/backgrounds/scenic" />
+                tools:srcCompat="@tools:sample/backgrounds/scenic"
+                android:contentDescription="@string/learning_hours_badge" />
 
             <TextView
                 android:id="@+id/learner_name"
