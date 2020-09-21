@@ -25,7 +25,7 @@ This is my submission for the **Google Africa Developer Scholarship 2020** phase
 ## Installation
 To run this code, clone this repository and import into Android Studio
 
-git clone https://github.com/Uticodes/AAD-Phase-2-Practice-Project.git
+git clone https://github.com/shazomii/GADS2020Leaderboard.git
 
 ## Screenshots
 <ul>
