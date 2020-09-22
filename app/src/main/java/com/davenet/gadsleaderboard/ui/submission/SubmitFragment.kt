@@ -1,51 +1,61 @@
 package com.davenet.gadsleaderboard.ui.submission
 
-import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.LayoutInflater
 import android.view.View
+import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.davenet.gadsleaderboard.R
-import com.davenet.gadsleaderboard.ui.main.MainActivity
 import com.davenet.gadsleaderboard.util.InputsValidator
 import com.davenet.gadsleaderboard.util.toast
 import com.davenet.gadsleaderboard.viewmodels.SubmitViewModel
-import kotlinx.android.synthetic.main.activity_submit.*
+import kotlinx.android.synthetic.main.fragment_submit.*
 
 
-class SubmitActivity : AppCompatActivity(), ConfirmDialogFragment.OnSubmitButtonClicked {
+class SubmitFragment : Fragment(), ConfirmDialogFragment.OnSubmitButtonClicked {
     private val inputValidator: InputsValidator by lazy { InputsValidator() }
     private val submitViewModel: SubmitViewModel by lazy {
-        ViewModelProvider(this, SubmitViewModel.Factory(application))
+        ViewModelProvider(this, SubmitViewModel.Factory(requireActivity().application))
             .get(SubmitViewModel::class.java)
     }
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_submit)
+
+
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        // Inflate the layout for this fragment
+        return inflater.inflate(R.layout.fragment_submit, container, false)
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
         subscribeToLiveData()
         initListeners()
     }
+
     private fun initListeners() {
         confirmButton.setOnClickListener {
             if (validateSubmission()){
                 val dialog = ConfirmDialogFragment()
                 dialog.setSubmitButtonClickListener(this)
-                dialog.show(supportFragmentManager, dialog.tag)
+                dialog.show(childFragmentManager, dialog.tag)
             }
         }
     }
     private fun subscribeToLiveData(){
-        submitViewModel.submissionSuccess.observe(this, {
+        submitViewModel.submissionSuccess.observe(viewLifecycleOwner, {
+            val successDialog = SuccessDialogFragment()
+            val errorDialog = ErrorDialogFragment()
             if (it == true){
-                val dialog = SuccessDialogFragment()
-                dialog.show(supportFragmentManager, dialog.tag)
+                successDialog.show(childFragmentManager, successDialog.tag)
             }
             else{
-                val dialog = ErrorDialogFragment()
-                dialog.show(supportFragmentManager, dialog.tag)
+                errorDialog.show(childFragmentManager, errorDialog.tag)
             }
         })
-        submitViewModel.loadingState.observe(this, {loading ->
+        submitViewModel.loadingState.observe(viewLifecycleOwner, {loading ->
             if (loading == true){
                 submitProgressBar.visibility = View.VISIBLE
             }
@@ -54,8 +64,8 @@ class SubmitActivity : AppCompatActivity(), ConfirmDialogFragment.OnSubmitButton
                 submitProgressBar.visibility = View.GONE
             }
         })
-        submitViewModel.toast.observe(this, {
-            this.toast(it)
+        submitViewModel.toast.observe(viewLifecycleOwner, {
+            this.requireActivity().toast(it)
         })
     }
     //submit project details

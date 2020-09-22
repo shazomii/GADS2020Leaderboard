@@ -1,15 +1,12 @@
 package com.davenet.gadsleaderboard.ui.submission
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.WindowManager
 import androidx.fragment.app.DialogFragment
 import com.davenet.gadsleaderboard.R
-import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.activity_main.submitButton
 import kotlinx.android.synthetic.main.fragment_confirm_dialog.*
 
 class ConfirmDialogFragment : DialogFragment() {
