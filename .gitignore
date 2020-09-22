@@ -13,3 +13,4 @@
 /app/schemas
 .externalNativeBuild
 .cxx
+/.idea/encodings.xml
