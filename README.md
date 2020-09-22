@@ -1,14 +1,14 @@
-## GADS Leaderboard - AAD Phase II Practice Project
+# GADS Leaderboard - AAD Phase II Practice Project
 
 This is my submission for the **Google Africa Developer Scholarship 2020** phase II practice project. The mobile app displays a list of **Top 20 learners** in the Learning Leaders category and **Top 20 learners** in the Skill IQ Leaders category.
 
-# The app implements the following standard required functionality:
+## The app implements the following standard required functionality:
 1. ViewPager for navigation between the two lists.
 2. Recyclerview for handling of the lists.
 3. Retrofit for making network requests.
 4. Google form for submission of the project.
 
-# Additional functionality:
+## Additional functionality:
 - Room database for data persistence.
 - Work manager for period background refresh (WIP).
 
