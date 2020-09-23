@@ -10,7 +10,7 @@ This is my submission for the **Google Africa Developer Scholarship 2020** phase
 
 ## Additional functionality:
 - Room database for data persistence.
-- Work manager for period background refresh (WIP).
+- Work manager for period background refresh.
 
 ## SDK Requirements used
 - Minimum SDK Requirement - Android API Level 26 (Oreo)
@@ -19,13 +19,16 @@ This is my submission for the **Google Africa Developer Scholarship 2020** phase
 ## Dependencies used
 - [ViewPager](https://developer.android.com/jetpack/androidx/releases/viewpager2)
 - [Navigation Component](https://developer.android.com/jetpack/androidx/releases/navigation)
+- [RecyclerView](https://developer.android.com/jetpack/androidx/releases/recyclerview)
+- [Room](https://developer.android.com/jetpack/androidx/releases/room)
+- [Work](https://developer.android.com/jetpack/androidx/releases/work)
 - [Retrofit](https://github.com/square/retrofit)
 - [Glide](https://github.com/bumptech/glide)
 
 ## Installation
 To run this code, clone this repository and import into Android Studio
 
-git clone https://github.com/shazomii/GADS2020Leaderboard.git
+`git clone https://github.com/shazomii/GADS2020Leaderboard.git`
 
 ## Screenshots
 <ul>
